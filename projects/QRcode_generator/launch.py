@@ -50,7 +50,7 @@ class qrcode():
         qr= pyqrcode.create(text, error='H', version=3, mode='binary')
         qr.png('qrcode.png', scale=15)
 
-        cfg = Config.fromfile('controlnet-brightness.py')
+        cfg = Config.fromfile('projects/QRcode_generator/controlnet-brightness.py')
         cfg.model.unet.from_pretrained = 'dreamlike-art/dreamlike-diffusion-1.0'
         cfg.model.vae.from_pretrained = 'dreamlike-art/dreamlike-diffusion-1.0'
         cfg.model.controlnet.from_pretrained = 'ioclab/control_v1p_sd15_brightness'
