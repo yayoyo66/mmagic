@@ -87,7 +87,7 @@ class DiffusersWrapper(BaseModule):
         self._from_config = from_config
 
         if from_pretrained is not None:
-            self.model = module_cls.from_pretrained(from_pretrained, *args,
+            self.model = module_cls.from_pretrained(from_pretrained, use_safetensors=True,  *args,
                                                     **kwargs)
             # weight has been initialized from pretrained, therefore we
             # `self._is_init` as True manually
