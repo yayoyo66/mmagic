@@ -47,7 +47,7 @@ class qrcode():
                     controlnet_conditioning_scale
                     ):
     
-        qr= pyqrcode.create(text, error='H', version=3, mode='binary')
+        qr= pyqrcode.create(text, error='H', version=6, mode='binary')
         qr.png('qrcode.png', scale=15)
 
         cfg = Config.fromfile('projects/QRcode_generator/controlnet-brightness.py')
