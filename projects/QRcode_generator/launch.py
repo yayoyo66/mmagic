@@ -16,7 +16,7 @@ import gradio as gr
 from mmengine.logging import MMLogger
 
 
-
+# test
 class qrcode():
 
     def __init__(self) -> None:
