@@ -65,7 +65,7 @@ class qrcode():
         prompt =  prompt
         negative_prompt = negative_prompt
         control_img = mmcv.imread('qrcode.png')
-        control_img = cv2.resize(control_img, (512,512))
+        control_img = cv2.resize(control_img, (256,256))
         control_img = control_img[:,:,0:1]
         control_img = np.concatenate([control_img]*3, axis=2)
         control = Image.fromarray(control_img)
@@ -74,8 +74,8 @@ class qrcode():
         guidance_scale = guidance_scale
         num_images_per_prompt = 1
         controlnet_conditioning_scale = controlnet_conditioning_scale
-        height=512
-        width=512
+        height=256
+        width=256
         
         output_dict = controlnet.infer(
                         prompt = prompt, 
