@@ -3,3 +3,4 @@ gradio
 pyqrcode
 mmengine
 pypng
+accelerate
