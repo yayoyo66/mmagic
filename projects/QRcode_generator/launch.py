@@ -57,7 +57,7 @@ class qrcode():
 
         cfg.model.init_cfg['type'] = 'convert_from_unet'
 
-        controlnet = MODELS.build(cfg.model).cuda()
+        controlnet = MODELS.build(cfg.model)
 
         # call init_weights manually to convert weight
         controlnet.init_weights()
