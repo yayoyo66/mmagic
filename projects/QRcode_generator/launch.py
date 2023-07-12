@@ -109,7 +109,7 @@ if __name__ == '__main__':
         prompt= gr.Textbox(label="Prompt",placeholder='dreamlikeart, an zebra')
         negative_prompt= gr.Textbox(label="Negative Prompt",placeholder='ugly, bad quality')
         with gr.Row():
-            num_inference_steps = gr.Slider(0, 100, value=50, step=1, label="Inference Steps")
+            num_inference_steps = gr.Slider(0, 10, value=5, step=1, label="Inference Steps")
             guidance_scale = gr.Slider(0, 10, value=7.5, step=0.5, label="Guidance Scale")
             controlnet_conditioning_scale = gr.Slider(0, 1, value=0.7, label="Controlnet Conditioning Scale")
         run_btn = gr.Button("Run")
