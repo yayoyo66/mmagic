@@ -53,6 +53,27 @@ class qrcode():
         cfg = Config.fromfile('projects/QRcode_generator/controlnet-brightness.py')
         cfg.model.unet.from_pretrained = 'dreamlike-art/dreamlike-diffusion-1.0'
         cfg.model.vae.from_pretrained = 'dreamlike-art/dreamlike-diffusion-1.0'
+
+        # controlnet config
+        cfg.model.controlnet.attention_head_dim = 8
+        cfg.model.controlnet.block_out_channels = [320,640,1280,1280]
+        cfg.model.controlnet.conditioning_embedding_out_channels = [16,32,96,256]
+        cfg.model.controlnet.controlnet_conditioning_channel_order = "rgb"
+        cfg.model.controlnet.cross_attention_dim = 768
+        cfg.model.controlnet.down_block_types = ["CrossAttnDownBlock2D","CrossAttnDownBlock2D","CrossAttnDownBlock2D","DownBlock2D"]
+        cfg.model.controlnet.downsample_padding = 1
+        cfg.model.controlnet.flip_sin_to_cos = True
+        cfg.model.controlnet.freq_shift = 0
+        cfg.model.controlnet.in_channels = 4
+        cfg.model.controlnet.layers_per_block = 2
+        cfg.model.controlnet.mid_block_scale_factor = 1
+        cfg.model.controlnet.norm_eps = 1e-05
+        cfg.model.controlnet.norm_num_groups = 32
+        cfg.model.controlnet.only_cross_attention = False
+        cfg.model.controlnet.resnet_time_scale_shift = "default"
+        cfg.model.controlnet.sample_size = 32
+        cfg.model.controlnet.upcast_attention = False
+        cfg.model.controlnet.use_linear_projection = False
         cfg.model.controlnet.from_pretrained = 'ioclab/control_v1p_sd15_brightness'
 
         cfg.model.init_cfg['type'] = 'convert_from_unet'
