@@ -51,8 +51,8 @@ class qrcode():
         qr.png('qrcode.png', scale=15)
 
         cfg = Config.fromfile('projects/QRcode_generator/controlnet-brightness.py')
-        cfg.model.unet.from_pretrained = 'dreamlike-art/dreamlike-diffusion-1.0'
-        cfg.model.vae.from_pretrained = 'dreamlike-art/dreamlike-diffusion-1.0'
+        cfg.model.unet.from_pretrained = 'dreamlike-art/dreamlike-photoreal-2.0'
+        cfg.model.vae.from_pretrained = 'dreamlike-art/dreamlike-photoreal-2.0'
 
         # controlnet config
         cfg.model.controlnet.attention_head_dim = 8
