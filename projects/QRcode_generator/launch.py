@@ -86,7 +86,7 @@ class qrcode():
         prompt =  prompt
         negative_prompt = negative_prompt
         control_img = mmcv.imread('qrcode.png')
-        control_img = cv2.resize(control_img, (256,256))
+        control_img = cv2.resize(control_img, (512,512))
         control_img = control_img[:,:,0:1]
         control_img = np.concatenate([control_img]*3, axis=2)
         control = Image.fromarray(control_img)
@@ -136,7 +136,7 @@ if __name__ == '__main__':
         run_btn = gr.Button("Run")
         ratio = gr.Slider(0, 1, value=0.5, step=0.1)
         with gr.Row():
-            o = gr.Image(shape=(256, 256))
+            o = gr.Image(shape=(512, 512))
         inputs = [text,prompt,negative_prompt,num_inference_steps,guidance_scale,controlnet_conditioning_scale]
         run_btn.click(fn= generator.qrcode_generator, inputs=inputs, outputs=o)
         ratio.change(fn = generator.change, inputs = ratio, outputs = o)
