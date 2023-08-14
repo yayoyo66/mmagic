@@ -95,8 +95,8 @@ class qrcode():
         guidance_scale = guidance_scale
         num_images_per_prompt = 1
         controlnet_conditioning_scale = controlnet_conditioning_scale
-        height=256
-        width=256
+        height=512
+        width=512
         
         output_dict = controlnet.infer(
                         prompt = prompt, 
